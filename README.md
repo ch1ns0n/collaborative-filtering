@@ -144,13 +144,9 @@ This project processes user interaction logs for research and recommendation exp
 ## 🛠️ Potential Improvements / Roadmap
 
 - Move heavy computations to GPU or distributed compute (FAISS GPU, Spark).
-
 - Add streaming updates to HNSW / incremental neighbor updates.
-
 - Use matrix factorization (ALS) as additional baseline.
-
 - Add more robust evaluation splits (time-aware cross-validation).
-
 - Export recommendation API (FastAPI/Flask) and dashboard (Streamlit) for demo.
 
 ---
