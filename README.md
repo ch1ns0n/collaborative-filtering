@@ -110,7 +110,6 @@ python collaborative_filtering.py
     - using persistent databases for item/user mappings,
     - offloading heavy nearest neighbor computation to approximate indexes (HNSW is already used), or
     - distributed frameworks (Spark) if needed.
-
 - Caching (pickle files) is implemented to avoid recomputing heavy neighbors and embeddings.
 
 ---
@@ -118,9 +117,7 @@ python collaborative_filtering.py
 ## 🧪 Evaluation
 
 Evaluation is performed per ALPHAS values and computes:
-
 - Precision@K, Recall@K, HitRate@K, NDCG@K, Coverage (unique recommended items / total items).
-
 Checkpointing saves intermediate state to cache_reco/hybrid_eval_checkpoint.pkl so long runs can be resumed from the last saved user index / alpha.
 
 ---
@@ -128,9 +125,7 @@ Checkpointing saves intermediate state to cache_reco/hybrid_eval_checkpoint.pkl 
 ## ✅ Reproducibility tips
 
 - Persist random seeds where applicable (TruncatedSVD uses random_state=42 in code).
-
 - Ensure identical item & user indexing across runs — the script performs several synchronization steps to align CF and CB item domains.
-
 - Use the provided caching mechanism to speed up iterative experiments (neighbors, embedding index).
 
 ---
